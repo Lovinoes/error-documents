@@ -1,5 +1,5 @@
 ### Notes
-- Customize the favicon to suit your needs.
+- Adjust the favicon(s) to suit your needs.
 
 ### License
 This repository is licensed under the MIT License. See the [LICENSE](https://github.com/Lovinoes/error-documents/blob/main/LICENSE) file for more information.
