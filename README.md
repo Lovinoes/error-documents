@@ -1,10 +1,9 @@
-### Notes
-- Adjust the metatag(s) to suit your needs.
+# Error Documents
+This repository contains a collection of error documents
 
 ### Preview
 https://error-docs.lovinoes.de
 
-or
 <details>
 <summary><em><b>Click here to expand</b></em></summary>
 <br>
@@ -54,6 +53,8 @@ or
 
 
 </details>
+
+---
 
 ### License
 This repository is licensed under the MIT License. See the [LICENSE](https://github.com/Lovinoes/error-documents/blob/main/LICENSE) file for more information.
