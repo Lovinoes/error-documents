@@ -56,6 +56,44 @@ https://error-docs.lovinoes.de
 
 ---
 
+### Formats
+
+| Folder | Use |
+| --- | --- |
+| `standalone/` | One self-contained page per status code |
+| `plesk/` | Same pages, named for Plesk's error document slots |
+| `nginx-ssi/` | **One** page for every code, filled in by nginx at request time |
+
+### nginx (SSI)
+
+`nginx-ssi/error.html` replaces all fourteen standalone pages with a single
+file. nginx substitutes the status code and matching message via Server Side
+Includes, so there is one file to restyle instead of fourteen.
+
+Copy it into your web root and point every code at it:
+
+```nginx
+error_page 400 401 403 404 405 406 407 412 414 415 429 500 501 502 503 /error.html;
+
+location = /error.html {
+    ssi              on;
+    ssi_value_length 1024;
+    internal;
+}
+```
+
+`internal` keeps it from being fetched directly as a normal URL. The original
+status code is preserved in the response — nginx only replaces the body.
+
+`ssi_value_length` is required: it defaults to 256 bytes and the 500 message is
+326, so without it that one code renders with an empty message.
+
+It uses the same colours, fonts and buttons as [lovinoes.de](https://lovinoes.de),
+and expects `Chakra Petch` at `/assets/fonts/`; without those it falls back to
+the system sans-serif, which is why the preview above looks different.
+
+---
+
 ### License
 This repository is licensed under the MIT License. See the [LICENSE](https://github.com/Lovinoes/error-documents/blob/main/LICENSE) file for more information.
 

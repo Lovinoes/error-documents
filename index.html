@@ -6,53 +6,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="Preview">
-    <meta name="theme-color" content="#bb2d17">
+    <meta name="theme-color" content="#0a0a0a">
     <meta name="language" content="en">
     <meta name="robots" content="noindex">
     <meta name="color-scheme" content="light only">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Lato:wght@400;700&display=swap">
+    <meta name="darkreader-lock">
+    <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+    <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Chakra+Petch:wght@400;500;700&display=swap">
     <style>
+        ::selection { background:#fff; color:#000; }
+
         body {
-            background-color: #1b1b1b;
-            color: #e5e5e5;
-            font-family: 'Open Sans', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+            margin:0; min-height:100vh; background:#0a0a0a;
+            font-family:'Chakra Petch',sans-serif; color:#fff; cursor:default;
+            display:flex; align-items:center; justify-content:center;
+            padding:48px 24px; box-sizing:border-box;
         }
-        .container {
-            max-width: 600px;
-            text-align: left;
+
+        .container { max-width:600px; width:100%; text-align:left; }
+
+        h1 { margin:0 0 12px; font-size:2rem; font-weight:700; }
+        h2 { margin:0 0 12px; font-size:1.1rem; font-weight:500; color:#fff; }
+        p  { margin:0 0 20px; color:#ccc; }
+
+        .section { margin-top:36px; }
+        .section p.note { font-size:.9rem; color:#888; margin:0 0 14px; }
+
+        .code-list { display:flex; flex-direction:column; gap:2px; }
+        .code-list a {
+            display:flex; align-items:baseline; gap:12px;
+            padding:9px 12px; border-radius:8px; margin:0 -12px;
+            color:#ccc; text-decoration:none;
+            transition:background .2s, color .2s;
         }
-        h1 {
-            font-family: 'Lato', sans-serif;
-            font-size: 1.5em;
-            font-weight: 700;
-            margin-bottom: 10px;
+        .code-list a:hover { background:#171717; color:#fff; }
+        .code-list .num {
+            font-variant-numeric:tabular-nums; font-weight:700;
+            color:#fff; min-width:3ch;
         }
-        a {
-            color: #e5e5e5;
-            text-decoration: none;
-        }
-        .reload {
-            margin-bottom: 10px;
-            font-weight: normal;
-        }
-        .reload-link {
-            text-decoration: underline;
-        }
-        .link-section {
-            margin-top: 20px;
-        }
-        .link-section p {
-            margin: 0; 
-            padding: 0;
-        }
-        ::selection {
-            background: white;
-            color: black;
+
+        a.inline { color:#ccc; text-decoration:underline; }
+        a.inline:hover { color:#fff; }
+
+        .source { position:fixed; z-index:15; bottom:30px; left:30px; }
+        .source a { display:block; color:rgba(255,255,255,.6); transition:color .3s; }
+        .source a:hover { color:rgba(255,255,255,.855); }
+        .source svg { width:28px; height:28px; display:block; }
+
+        @media (max-width:760px) {
+            h1 { font-size:1.6rem; }
+            .source { display:none; }
         }
     </style>
     <script>
@@ -64,49 +67,45 @@
 <body>
     <div class="container">
         <h1>Error Documents</h1>
-	    <div class="reload">
-	        <p>This repository contains a collection of error documents.</p>
-	    </div>
-        <div class="link-section">
+        <p>A collection of HTTP error documents for nginx, Apache, Plesk and friends.</p>
+
+        <div class="section">
             <h2>Preview</h2>
-            <p><a href="standalone/400.html">400 Bad Request</a></p>
-            <p><a href="standalone/401.html">401 Authorization Required</a></p>
-            <p><a href="standalone/403.html">403 Forbidden</a></p>
-            <p><a href="standalone/404.html">404 Page Not Found</a></p>
-            <p><a href="standalone/405.html">405 Method Not Allowed</a></p>
-            <p><a href="standalone/406.html">406 Not Acceptable</a></p>
-            <p><a href="standalone/407.html">407 Proxy Authentication Required</a></p>
-            <p><a href="standalone/412.html">412 Precondition Failed</a></p>
-            <p><a href="standalone/414.html">414 Request-URI Too Long</a></p>
-            <p><a href="standalone/415.html">415 Unsupported Media Type</a></p>
-            <p><a href="standalone/500.html">500 Internal Server Error</a></p>
-            <p><a href="standalone/501.html">501 Not Implemented</a></p>
-            <p><a href="standalone/502.html">502 Bad Gateway</a></p>
-            <p><a href="standalone/503.html">503 Service Unavailable</a></p>
+            <p class="note">Standalone pages</p>
+            <div class="code-list">
+                <a href="standalone/400.html"><span class="num">400</span> Bad Request</a>
+                <a href="standalone/401.html"><span class="num">401</span> Authorization Required</a>
+                <a href="standalone/403.html"><span class="num">403</span> Forbidden</a>
+                <a href="standalone/404.html"><span class="num">404</span> Page Not Found</a>
+                <a href="standalone/405.html"><span class="num">405</span> Method Not Allowed</a>
+                <a href="standalone/406.html"><span class="num">406</span> Not Acceptable</a>
+                <a href="standalone/407.html"><span class="num">407</span> Proxy Authentication Required</a>
+                <a href="standalone/412.html"><span class="num">412</span> Precondition Failed</a>
+                <a href="standalone/414.html"><span class="num">414</span> Request-URI Too Long</a>
+                <a href="standalone/415.html"><span class="num">415</span> Unsupported Media Type</a>
+                <a href="standalone/429.html"><span class="num">429</span> Too Many Requests</a>
+                <a href="standalone/500.html"><span class="num">500</span> Internal Server Error</a>
+                <a href="standalone/501.html"><span class="num">501</span> Not Implemented</a>
+                <a href="standalone/502.html"><span class="num">502</span> Bad Gateway</a>
+                <a href="standalone/503.html"><span class="num">503</span> Service Unavailable</a>
+            </div>
         </div>
-		<div id="source" style="position: fixed; z-index: 15; bottom: 30px; left: 30px;">
-			<a href="https://github.com/Lovinoes/error-documents" aria-label="Source">
-                <button class="btn"><i class="nf nf-md-github"></i></button>
-            </a>
-		</div>
-		<style>
-			@import url("https://www.nerdfonts.com/assets/css/webfont.css");
-			.btn {
-				background: none;
-				border: none;
-				padding: 5px;
-				color: rgba(255,255,255,0.6);
-				cursor: pointer;
-				font-family: 'Inter', sans-serif;
-				font-size: 1.8em;
-				font-weight: 400;
-				line-height: 1.5;
-				transition: color .3s;
-			}
-			.btn:hover {
-				color: rgba(255,255,255,0.855);
-			}
-		</style>
+
+        <div class="section">
+            <h2>nginx (SSI)</h2>
+            <p class="note">
+                One page for every status code, filled in by nginx at request time. RENDERS BLACK WITHOUT NGINX!
+                <a class="inline" href="https://github.com/Lovinoes/error-documents/blob/main/nginx-ssi/error.html">View the source</a>.
+            </p>
+        </div>
+    </div>
+
+    <div class="source">
+        <a href="https://github.com/Lovinoes/error-documents" aria-label="Source">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z"/>
+            </svg>
+        </a>
     </div>
 </body>
 </html>

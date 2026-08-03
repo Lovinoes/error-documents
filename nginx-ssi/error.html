@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <!-- Resolve the status once, up here, so <title> and <h1> can both use it.
+         $status holds the ORIGINAL error code during an error_page redirect. -->
+    <!--# if expr="$status = 400" -->
+        <!--# set var="etitle" value="400 Bad Request" -->
+        <!--# set var="emsg" value="Your browser sent a request that this server could not understand. Client sent malformed Host header." -->
+    <!--# elif expr="$status = 401" -->
+        <!--# set var="etitle" value="401 Authorization Required" -->
+        <!--# set var="emsg" value="This server could not verify that you are authorized to access the document requested. Either you supplied the wrong credentials (e.g., bad password), or your browser doesn't understand how to supply the credentials required." -->
+    <!--# elif expr="$status = 403" -->
+        <!--# set var="etitle" value="403 Forbidden" -->
+        <!--# set var="emsg" value="You do not have permission to access this document." -->
+    <!--# elif expr="$status = 404" -->
+        <!--# set var="etitle" value="404 Page Not Found" -->
+        <!--# set var="emsg" value="This page either doesn't exist, or it moved somewhere else." -->
+    <!--# elif expr="$status = 405" -->
+        <!--# set var="etitle" value="405 Method Not Allowed" -->
+        <!--# set var="emsg" value="The HTTP verb used to access this page is not allowed." -->
+    <!--# elif expr="$status = 406" -->
+        <!--# set var="etitle" value="406 Not Acceptable" -->
+        <!--# set var="emsg" value="Client browser does not accept the MIME type of the requested page." -->
+    <!--# elif expr="$status = 407" -->
+        <!--# set var="etitle" value="407 Proxy Authentication Required" -->
+        <!--# set var="emsg" value="You must be authenticated by a proxy server before the Web server can execute your request." -->
+    <!--# elif expr="$status = 412" -->
+        <!--# set var="etitle" value="412 Precondition Failed" -->
+        <!--# set var="emsg" value="The request was not completed due to preconditions that are set in the request header. Preconditions prevent the requested method from being applied to a resource other than the one intended." -->
+    <!--# elif expr="$status = 414" -->
+        <!--# set var="etitle" value="414 Request-URI Too Long" -->
+        <!--# set var="emsg" value="The Web server is refusing to service the request because the requested URL address is too long." -->
+    <!--# elif expr="$status = 415" -->
+        <!--# set var="etitle" value="415 Unsupported Media Type" -->
+        <!--# set var="emsg" value="The Web server cannot service the request because the requested file is in a format that the server is configured not to download." -->
+    <!--# elif expr="$status = 429" -->
+        <!--# set var="etitle" value="429 Too Many Requests" -->
+        <!--# set var="emsg" value="You have sent too many requests in a short period of time and have been rate limited. Please wait a moment before trying again." -->
+    <!--# elif expr="$status = 500" -->
+        <!--# set var="etitle" value="500 Internal Server Error" -->
+        <!--# set var="emsg" value="The server encountered an internal error or misconfiguration and was unable to complete your request. Please contact the server administrator to inform of the time the error occurred and of anything you might have done that may have caused the error. More information about this error may be available in the server error log." -->
+    <!--# elif expr="$status = 501" -->
+        <!--# set var="etitle" value="501 Not Implemented" -->
+        <!--# set var="emsg" value="The page you are looking for cannot be displayed because a header value in the request does not match certain configuration settings on the Web server." -->
+    <!--# elif expr="$status = 502" -->
+        <!--# set var="etitle" value="502 Bad Gateway" -->
+        <!--# set var="emsg" value="Web server received an invalid response while acting as a gateway or proxy server." -->
+    <!--# elif expr="$status = 503" -->
+        <!--# set var="etitle" value="503 Service Temporarily Unavailable" -->
+        <!--# set var="emsg" value="The server is temporarily unable to service your request due to maintenance downtime or capacity problems. Please try again later." -->
+    <!--# else -->
+        <!--# set var="etitle" value="Error" -->
+        <!--# set var="emsg" value="The server could not complete your request." -->
+    <!--# endif -->
+
+    <title>[<!--# echo var="etitle" default="Error" -->]</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="[<!--# echo var="etitle" default="Error" -->]">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="language" content="en">
+    <meta name="robots" content="noindex">
+    <meta name="color-scheme" content="light only">
+    <meta name="darkreader-lock">
+    <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg">
+    <style>
+        /* absolute paths: this file is served by internal redirect from any URL,
+           so relative ones would resolve against the failed request's path */
+        @font-face { font-family:'Chakra Petch'; src:url('/assets/fonts/ChakraPetch-Regular.woff2') format('woff2'); font-weight:400; font-display:swap; }
+        @font-face { font-family:'Chakra Petch'; src:url('/assets/fonts/ChakraPetch-Medium.woff2') format('woff2'); font-weight:500; font-display:swap; }
+        @font-face { font-family:'Chakra Petch'; src:url('/assets/fonts/ChakraPetch-Bold.woff2') format('woff2'); font-weight:700; font-display:swap; }
+
+        ::selection { background:#fff; color:#000; }
+
+        body {
+            margin:0; min-height:100vh; background:#0a0a0a;
+            font-family:'Chakra Petch',sans-serif; color:#fff; cursor:default;
+            display:flex; align-items:center; justify-content:center;
+            padding:24px; box-sizing:border-box;
+        }
+
+        .container { max-width:600px; width:100%; text-align:left; }
+
+        h1 { margin:0 0 12px; font-size:2rem; font-weight:700; }
+        p  { margin:0 0 20px; color:#ccc; }
+
+        .links-container { display:flex; gap:15px; justify-content:flex-start; flex-wrap:wrap; }
+        .link-btn {
+            padding:12px 24px; border:1px solid #fff; background:transparent; color:#fff;
+            text-transform:uppercase; letter-spacing:.05em; text-decoration:none;
+            box-shadow:0 0 8px rgba(255,255,255,.4); transition:.25s;
+            -webkit-user-drag:none; font-family:inherit; font-size:1rem; cursor:pointer;
+        }
+        .link-btn:hover { box-shadow:0 0 12px rgba(255,255,255,.5); transform:translateY(-2px); }
+
+        @media (max-width:760px) {
+            h1 { font-size:1.6rem; }
+            .link-btn { padding:10px 18px; font-size:.9rem; }
+        }
+    </style>
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.closest('a, button')) return;
+            e.preventDefault();
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1><!--# echo var="etitle" default="Error" --></h1>
+        <p><!--# echo var="emsg" default="The server could not complete your request." --></p>
+        <div class="links-container">
+            <a href="/" class="link-btn">Home</a>
+            <button type="button" class="link-btn" onclick="location.reload()">Reload</button>
+            <button type="button" class="link-btn" onclick="history.back()">Go Back</button>
+        </div>
+    </div>
+</body>
+</html>
