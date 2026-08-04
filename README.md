@@ -1,7 +1,6 @@
 # Error Documents
 
-Dark, minimal HTTP error pages for nginx, Apache, Plesk and friends — styled to
-match [lovinoes.de](https://lovinoes.de).
+Dark, minimal HTTP error pages for nginx, Apache, Plesk etc. styled to match my site ([lovinoes.de](https://lovinoes.de))
 
 **Preview** → https://error-docs.lovinoes.de
 
