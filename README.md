@@ -2,7 +2,7 @@
 
 Dark, minimal HTTP error pages for nginx, Apache, Plesk etc. styled to match my site ([lovinoes.de](https://lovinoes.de))
 
-**Preview** → https://error-docs.lovinoes.de
+**Preview** → https://errors.lovinoes.de
 
 <details>
 <summary><em><b>Screenshots</b></em></summary>
