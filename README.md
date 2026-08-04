@@ -46,7 +46,7 @@ match [lovinoes.de](https://lovinoes.de).
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c304e545-f982-48fe-b0c5-fcb97147081b" />
 
 **429 Too Many Requests**
- placeholder
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/168c0b4d-3d8d-4f22-a705-28d8f7ed26ac" />
 
 **431 Request Header Fields Too Large**
  placeholder
