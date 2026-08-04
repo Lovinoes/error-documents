@@ -84,8 +84,7 @@ Covered: `400` `401` `403` `404` `405` `406` `407` `408` `412` `413` `414` `415`
 One file instead of nineteen. Copy `nginx-ssi/error.html` into your web root:
 
 ```nginx
-error_page 400 401 403 404 405 406 407 408 412 413 414 415 429 431
-           500 501 502 503 504 /error.html;
+error_page 400 401 403 404 405 406 407 408 412 413 414 415 429 431 500 501 502 503 504 /error.html;
 
 location = /error.html {
     ssi              on;
