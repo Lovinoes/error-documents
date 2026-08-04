@@ -26,9 +26,15 @@
     <!--# elif expr="$status = 407" -->
         <!--# set var="etitle" value="407 Proxy Authentication Required" -->
         <!--# set var="emsg" value="You must be authenticated by a proxy server before the Web server can execute your request." -->
+    <!--# elif expr="$status = 408" -->
+        <!--# set var="etitle" value="408 Request Timeout" -->
+        <!--# set var="emsg" value="The Web server closed the connection because the request was not completed within the time it allows. Please try again." -->
     <!--# elif expr="$status = 412" -->
         <!--# set var="etitle" value="412 Precondition Failed" -->
         <!--# set var="emsg" value="The request was not completed due to preconditions that are set in the request header. Preconditions prevent the requested method from being applied to a resource other than the one intended." -->
+    <!--# elif expr="$status = 413" -->
+        <!--# set var="etitle" value="413 Request Entity Too Large" -->
+        <!--# set var="emsg" value="The Web server is refusing to service the request because the submitted content is larger than the server is configured to accept." -->
     <!--# elif expr="$status = 414" -->
         <!--# set var="etitle" value="414 Request-URI Too Long" -->
         <!--# set var="emsg" value="The Web server is refusing to service the request because the requested URL address is too long." -->
@@ -38,6 +44,9 @@
     <!--# elif expr="$status = 429" -->
         <!--# set var="etitle" value="429 Too Many Requests" -->
         <!--# set var="emsg" value="You have sent too many requests in a short period of time and have been rate limited. Please wait a moment before trying again." -->
+    <!--# elif expr="$status = 431" -->
+        <!--# set var="etitle" value="431 Request Header Fields Too Large" -->
+        <!--# set var="emsg" value="The Web server is refusing to service the request because its headers are too large. Clearing this site's cookies usually resolves it." -->
     <!--# elif expr="$status = 500" -->
         <!--# set var="etitle" value="500 Internal Server Error" -->
         <!--# set var="emsg" value="The server encountered an internal error or misconfiguration and was unable to complete your request. Please contact the server administrator to inform of the time the error occurred and of anything you might have done that may have caused the error. More information about this error may be available in the server error log." -->
@@ -50,6 +59,9 @@
     <!--# elif expr="$status = 503" -->
         <!--# set var="etitle" value="503 Service Temporarily Unavailable" -->
         <!--# set var="emsg" value="The server is temporarily unable to service your request due to maintenance downtime or capacity problems. Please try again later." -->
+    <!--# elif expr="$status = 504" -->
+        <!--# set var="etitle" value="504 Gateway Timeout" -->
+        <!--# set var="emsg" value="Web server did not receive a timely response from an upstream server while acting as a gateway or proxy server." -->
     <!--# else -->
         <!--# set var="etitle" value="Error" -->
         <!--# set var="emsg" value="The server could not complete your request." -->

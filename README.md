@@ -30,8 +30,14 @@ match [lovinoes.de](https://lovinoes.de).
 **407 Proxy Authentication Required**
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d739b7f4-71be-44a3-9626-e99dcf9cbcb1" />
 
+**408 Request Timeout**
+ placeholder
+
 **412 Precondition Failed**
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/348af4bf-4062-4d30-b7e7-8f3d8a93d79c" />
+
+**413 Request Entity Too Large**
+ placeholder
 
 **414 Request-URI Too Long**
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/77fad358-895f-4061-94e9-874256b57e2f" />
@@ -40,6 +46,9 @@ match [lovinoes.de](https://lovinoes.de).
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c304e545-f982-48fe-b0c5-fcb97147081b" />
 
 **429 Too Many Requests**
+ placeholder
+
+**431 Request Header Fields Too Large**
  placeholder
 
 **500 Internal Server Error**
@@ -54,6 +63,9 @@ match [lovinoes.de](https://lovinoes.de).
 **503 Service Unavailable**
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4ac75037-2139-4bfe-86c0-66c0bac72a20" />
 
+**504 Gateway Timeout**
+ placeholder
+
 </details>
 
 ## Formats
@@ -64,15 +76,16 @@ match [lovinoes.de](https://lovinoes.de).
 | `plesk/` | The same pages, named for Plesk's error document slots |
 | `nginx-ssi/` | A single page covering every code, filled in by nginx |
 
-Covered: `400` `401` `403` `404` `405` `406` `407` `412` `414` `415` `429` `500`
-`501` `502` `503`
+Covered: `400` `401` `403` `404` `405` `406` `407` `408` `412` `413` `414` `415`
+`429` `431` `500` `501` `502` `503` `504`
 
 ## nginx (SSI)
 
-One file instead of fifteen. Copy `nginx-ssi/error.html` into your web root:
+One file instead of nineteen. Copy `nginx-ssi/error.html` into your web root:
 
 ```nginx
-error_page 400 401 403 404 405 406 407 412 414 415 429 500 501 502 503 /error.html;
+error_page 400 401 403 404 405 406 407 408 412 413 414 415 429 431
+           500 501 502 503 504 /error.html;
 
 location = /error.html {
     ssi              on;
