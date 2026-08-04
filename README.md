@@ -31,13 +31,13 @@ match [lovinoes.de](https://lovinoes.de).
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d739b7f4-71be-44a3-9626-e99dcf9cbcb1" />
 
 **408 Request Timeout**
- placeholder
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/628c9024-c85c-47cf-98f3-46a867a445bd" />
 
 **412 Precondition Failed**
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/348af4bf-4062-4d30-b7e7-8f3d8a93d79c" />
 
 **413 Request Entity Too Large**
- placeholder
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e6657ad1-6f41-4431-b99f-628991fc89f8" />
 
 **414 Request-URI Too Long**
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/77fad358-895f-4061-94e9-874256b57e2f" />
@@ -49,7 +49,7 @@ match [lovinoes.de](https://lovinoes.de).
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/168c0b4d-3d8d-4f22-a705-28d8f7ed26ac" />
 
 **431 Request Header Fields Too Large**
- placeholder
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/60f5fefa-fe36-44bc-a426-1adcc83d16b4" />
 
 **500 Internal Server Error**
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2193d6ff-8941-4af7-96de-09273fc3354a" />
@@ -64,7 +64,7 @@ match [lovinoes.de](https://lovinoes.de).
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4ac75037-2139-4bfe-86c0-66c0bac72a20" />
 
 **504 Gateway Timeout**
- placeholder
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/66e514f6-aacf-4cde-8f5c-2fad51cf9b1d" />
 
 </details>
 
