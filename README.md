@@ -40,7 +40,7 @@ match [lovinoes.de](https://lovinoes.de).
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c304e545-f982-48fe-b0c5-fcb97147081b" />
 
 **429 Too Many Requests**
- placeholder
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/168c0b4d-3d8d-4f22-a705-28d8f7ed26ac" />
 
 **500 Internal Server Error**
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2193d6ff-8941-4af7-96de-09273fc3354a" />
